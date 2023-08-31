@@ -1,23 +1,42 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import { setupCounter } from './counter.js'
+const homeScore= document.getElementById('home-score')
+const guestScore= document.getElementById('guest-score')
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+let homeCount=0
+let guestCount=0
 
-setupCounter(document.querySelector('#counter'))
+document.addEventListener('click',({target:{dataset:{home,guest},id}})=>{
+  home  &&  incrementScore('home',home)
+  guest &&  incrementScore('guest',guest)
+  id=='reset-score' &&  resetScore()
+
+})
+
+const incrementScore=(team,amount)=>{
+
+    team==='home'   &&  (homeCount += Number(amount))
+    team==='guest'  &&  (guestCount+= Number(amount))
+
+    renderScores()
+
+}
+
+
+const checkLeader=()=>{
+  homeScore.classList.remove('leader')
+  guestScore.classList.remove('leader')
+  
+  homeCount>guestCount &&homeScore.classList.add('leader')
+  guestCount>homeCount && guestScore.classList.add('leader')
+}
+
+const resetScore=()=>{
+  guestCount=0
+  homeCount=0
+  renderScores()
+}
+
+const renderScores=()=>{
+  guestScore.innerHTML=guestCount
+  homeScore.innerHTML=homeCount
+  checkLeader()
+}

@@ -1,13 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/cursed-timer-ulil" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basketball Score Board</title>
+</head>
+<body>
+   
+    <div class=" container main flex-row wrap">
+        <div class="team">
+          <h3 class="team-name">HOME</h3>
+          <h1 class="team-score" id="home-score">0</h1>
+          <div class="container score-btn-container flex-row">
+              <button class="btn-primary" data-home=1>+1</button>
+              <button class="btn-primary" data-home=2>+2</button>
+              <button class="btn-primary" data-home=3>+3</button>
+          </div>
+        </div>
+        <div class="team">
+          <h3 class="team-name">GUEST</h3>
+          <h1 class="team-score" id="guest-score">0</h1>
+          <div class="container score-btn-container flex-row">
+            <button class="btn-primary" data-guest=1>+1</button>
+            <button class="btn-primary" data-guest=2>+2</button>
+            <button class="btn-primary" data-guest=3>+3</button>
+          </div>
+        </div>
+        
+        
+      </div>
+      <div class="container reset-container">
+      <button class="btn-primary" id="reset-score">NEW GAME</button>
+      </div>
+      
+      
+
+    
+    
+    <script src="main.js" type = module></script>
   </body>
-</html>
+  </html>
+  
