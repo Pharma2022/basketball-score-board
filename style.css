@@ -42,6 +42,7 @@ h1,h2,h3,p,button,header{
 .team-score{
   font-size: 5.7rem;
   color:var(--pink-red);
+  border-radius: 0.37rem;
 }
 
 .btn-primary{
