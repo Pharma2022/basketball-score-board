@@ -22,7 +22,7 @@ See [demo](https://shahs-basketball-score-board.netlify.app/)
 - Utility Classes
 - Modifier Classes
 
-- 
+  
 ### If you wish to connect with me or find out more about my projects you can:
 - Visit my [linkedin]()
 - View my [portfolio](https://shahs-portfolio.netlify.app/)
